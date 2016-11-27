@@ -26,7 +26,7 @@ def app(request,config):
     browser = request.config.getoption("--browser")
     if fixture is None or not fixture.is_valid():
 
-        fixture=Application(browser=browser,base_url=config["web"]["base_url"])
+        fixture=Application(browser=browser,config=config)
 
     return fixture
 
